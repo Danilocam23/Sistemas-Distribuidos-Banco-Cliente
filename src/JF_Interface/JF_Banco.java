@@ -36,8 +36,18 @@ public class JF_Banco extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jBAdminCuentas.setText("Saldos");
+        jBAdminCuentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAdminCuentasActionPerformed(evt);
+            }
+        });
 
         jBTransacciones.setText("Transacciones");
+        jBTransacciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBTransaccionesActionPerformed(evt);
+            }
+        });
 
         jBSaldos.setText("Administrar Cuentas");
         jBSaldos.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +88,18 @@ public class JF_Banco extends javax.swing.JFrame {
         jfac.show();
         dispose();
     }//GEN-LAST:event_jBSaldosActionPerformed
+
+    private void jBTransaccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTransaccionesActionPerformed
+       JF_Transacciones jft = new JF_Transacciones();
+        jft.show();
+        dispose();
+    }//GEN-LAST:event_jBTransaccionesActionPerformed
+
+    private void jBAdminCuentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdminCuentasActionPerformed
+        JF_Saldos jfs = new JF_Saldos();
+        jfs.show();
+        dispose();
+    }//GEN-LAST:event_jBAdminCuentasActionPerformed
 
     /**
      * @param args the command line arguments

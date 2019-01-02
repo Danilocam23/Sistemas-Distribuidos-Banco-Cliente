@@ -53,11 +53,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Saldos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBAdminCuentasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBTransacciones">
       <Properties>
         <Property name="text" type="java.lang.String" value="Transacciones"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBTransaccionesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBSaldos">
       <Properties>

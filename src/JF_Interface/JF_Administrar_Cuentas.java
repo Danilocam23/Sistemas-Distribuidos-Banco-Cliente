@@ -8,6 +8,7 @@ package JF_Interface;
 import banco_cliente.Conectar_Sockets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.AbstractButton;
 
 /**
  *
@@ -179,13 +180,30 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
         jT_cuenta_numero.setText("");
         jT_cuenta_Propietario.setText("");
         jT_cuenta_dinero.setText("");
-       
+        
+        JF_Banco jfb = new JF_Banco();
+        jfb.show();
+        dispose();
+
     }//GEN-LAST:event_jB_cancelarActionPerformed
 
     private void jB_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_guardarActionPerformed
 
+        String Operacion;
+
+        if (jR_cuenta_crear.isSelected()) {
+            Operacion = "crear";
+        } else if (jR_cuenta_borrar.isSelected()) {
+            Operacion = "borrar";
+        } else {
+            Operacion = "modificar";
+
+        }
+
         String value
-                = jT_cuenta_numero.getText() + ","
+                = "1,"
+                + Operacion  + ","
+                + jT_cuenta_numero.getText() + ","
                 + jT_cuenta_Propietario.getText() + ","
                 + jT_cuenta_dinero.getText();
 

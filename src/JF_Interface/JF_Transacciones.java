@@ -43,6 +43,7 @@ public class JF_Transacciones extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(358, 359));
 
         bG_transacciones.add(jR_consignacion);
+        jR_consignacion.setSelected(true);
         jR_consignacion.setText("Consignacion");
         jR_consignacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,11 +134,26 @@ public class JF_Transacciones extends javax.swing.JFrame {
         
         jT_tran_numero.setText("");
         jT_tran_dinero.setText("");
+         JF_Banco jfb = new JF_Banco();
+        jfb.show();
+        dispose();
     }//GEN-LAST:event_jB_tran_cancelarActionPerformed
 
     private void jB_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_guardarActionPerformed
-       String value
-                = jT_tran_numero.getText() + ","
+       
+        String Operacion;
+
+        if (jR_consignacion.isSelected()) {
+            Operacion = "consignacion";       
+        } else {
+            Operacion = "retiro";
+
+        }
+        
+        String value
+                ="2,"
+               + Operacion  + ","
+                +jT_tran_numero.getText() + ","
                 + jT_tran_dinero.getText();
 
         Conectar_Sockets cs = new Conectar_Sockets();
