@@ -31,17 +31,15 @@ public class Conectar_Sockets {
             //se reliza la conecion con el soket            
             cliente = new Socket(ip,puerto);
             
-            entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
-            teclado = new BufferedReader(new InputStreamReader(System.in));
-            //texto escrito desde el teclado.
-            String tec = teclado.readLine();
+            entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));          
+         
+            String envio = jsDatos;
             salida = new PrintStream(cliente.getOutputStream());
-            salida.println(tec);
+            salida.println(envio);
             String msg = entrada.readLine();
             System.out.println(msg);
             entrada.close();
             salida.close();
-            teclado.close();
             cliente.close();
         } catch (Exception e) {
         }
