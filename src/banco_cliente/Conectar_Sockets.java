@@ -21,7 +21,7 @@ public class Conectar_Sockets {
     //Puerto de la maquina que se va utilizar
     int puerto = 9000;
     String ip = "127.0.0.1";
-    BufferedReader entrada, teclado;
+    BufferedReader entrada;
     
     //variables de salida
     PrintStream salida;
