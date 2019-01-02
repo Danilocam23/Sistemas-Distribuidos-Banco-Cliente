@@ -5,6 +5,10 @@
  */
 package JF_Interface;
 
+import banco_cliente.Conectar_Sockets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Danilo
@@ -16,6 +20,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
      */
     public JF_Administrar_Cuentas() {
         initComponents();
+
     }
 
     /**
@@ -35,17 +40,16 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jT_cuenta_numero = new javax.swing.JTextField();
         jT_cuenta_Propietario = new javax.swing.JTextField();
         jT_cuenta_dinero = new javax.swing.JTextField();
-        jT_cuenta_fecha = new javax.swing.JTextField();
         jB_guardar = new javax.swing.JButton();
         jB_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bg_admin_cuentas.add(jR_cuenta_crear);
+        jR_cuenta_crear.setSelected(true);
         jR_cuenta_crear.setText("Crear cuenta ");
         jR_cuenta_crear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,9 +79,12 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
         jLabel3.setText("Dinero ingresado ");
 
-        jLabel4.setText("Fecha de registro ");
-
         jB_guardar.setText("Guardar");
+        jB_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_guardarActionPerformed(evt);
+            }
+        });
 
         jB_cancelar.setText("Cancelar");
         jB_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +108,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
                                 .addComponent(jR_cuenta_borrar)
                                 .addGap(18, 18, 18)
                                 .addComponent(jR_cuenta_modificar)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 11, Short.MAX_VALUE))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
@@ -109,14 +116,12 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel3))
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jT_cuenta_numero)
+                            .addComponent(jT_cuenta_numero, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                             .addComponent(jT_cuenta_Propietario)
-                            .addComponent(jT_cuenta_dinero)
-                            .addComponent(jT_cuenta_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                            .addComponent(jT_cuenta_dinero))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jB_guardar)
@@ -146,11 +151,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jT_cuenta_dinero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jT_cuenta_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_guardar)
                     .addComponent(jB_cancelar))
@@ -173,14 +174,25 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     }//GEN-LAST:event_jR_cuenta_crearActionPerformed
 
     private void jB_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cancelarActionPerformed
-        
+
         //Limpiar campos
-        
         jT_cuenta_numero.setText("");
         jT_cuenta_Propietario.setText("");
         jT_cuenta_dinero.setText("");
-        jT_cuenta_fecha.setText("");
+       
     }//GEN-LAST:event_jB_cancelarActionPerformed
+
+    private void jB_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_guardarActionPerformed
+
+        String value
+                = jT_cuenta_numero.getText() + ","
+                + jT_cuenta_Propietario.getText() + ","
+                + jT_cuenta_dinero.getText();
+
+        Conectar_Sockets cs = new Conectar_Sockets();
+
+        cs.Datos(value);
+    }//GEN-LAST:event_jB_guardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,14 +236,12 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton jR_cuenta_borrar;
     private javax.swing.JRadioButton jR_cuenta_crear;
     private javax.swing.JRadioButton jR_cuenta_modificar;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jT_cuenta_Propietario;
     private javax.swing.JTextField jT_cuenta_dinero;
-    private javax.swing.JTextField jT_cuenta_fecha;
     private javax.swing.JTextField jT_cuenta_numero;
     // End of variables declaration//GEN-END:variables
 }
