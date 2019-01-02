@@ -163,15 +163,21 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jR_cuenta_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_borrarActionPerformed
-        // TODO add your handling code here:
+        jT_cuenta_numero.setText("");
+        jT_cuenta_Propietario.setText("");
+        jT_cuenta_dinero.setText("");
     }//GEN-LAST:event_jR_cuenta_borrarActionPerformed
 
     private void jR_cuenta_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_modificarActionPerformed
-        // TODO add your handling code here:
+        jT_cuenta_numero.setText("");
+        jT_cuenta_Propietario.setText("");
+        jT_cuenta_dinero.setText("");
     }//GEN-LAST:event_jR_cuenta_modificarActionPerformed
 
     private void jR_cuenta_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_crearActionPerformed
-        // TODO add your handling code here:
+        jT_cuenta_numero.setText("");
+        jT_cuenta_Propietario.setText("");
+        jT_cuenta_dinero.setText("");
     }//GEN-LAST:event_jR_cuenta_crearActionPerformed
 
     private void jB_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cancelarActionPerformed
