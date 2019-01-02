@@ -27,28 +27,47 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        bg_admin_cuentas = new javax.swing.ButtonGroup();
+        jR_cuenta_crear = new javax.swing.JRadioButton();
+        jR_cuenta_borrar = new javax.swing.JRadioButton();
+        jR_cuenta_modificar = new javax.swing.JRadioButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jT_cuenta_numero = new javax.swing.JTextField();
+        jT_cuenta_Propietario = new javax.swing.JTextField();
+        jT_cuenta_dinero = new javax.swing.JTextField();
+        jT_cuenta_fecha = new javax.swing.JTextField();
+        jB_guardar = new javax.swing.JButton();
+        jB_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jRadioButton1.setText(" Crear cuenta ");
+        bg_admin_cuentas.add(jR_cuenta_crear);
+        jR_cuenta_crear.setText("Crear cuenta ");
+        jR_cuenta_crear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jR_cuenta_crearActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Borrar Cuentas ");
+        bg_admin_cuentas.add(jR_cuenta_borrar);
+        jR_cuenta_borrar.setText("Borrar cuenta ");
+        jR_cuenta_borrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jR_cuenta_borrarActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText(" Modificar cuentas ");
+        bg_admin_cuentas.add(jR_cuenta_modificar);
+        jR_cuenta_modificar.setText("Modificar cuenta");
+        jR_cuenta_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jR_cuenta_modificarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Número de la Cuenta ");
 
@@ -58,9 +77,14 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
         jLabel4.setText("Fecha de registro ");
 
-        jButton1.setText("Guardar");
+        jB_guardar.setText("Guardar");
 
-        jButton2.setText("Cancelar");
+        jB_cancelar.setText("Cancelar");
+        jB_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_cancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,11 +96,11 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(jR_cuenta_crear)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2)
+                                .addComponent(jR_cuenta_borrar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton3)
+                                .addComponent(jR_cuenta_modificar)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addContainerGap())
@@ -89,53 +113,74 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                            .addComponent(jT_cuenta_numero)
+                            .addComponent(jT_cuenta_Propietario)
+                            .addComponent(jT_cuenta_dinero)
+                            .addComponent(jT_cuenta_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(jB_guardar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(jB_cancelar)
                         .addGap(99, 99, 99))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
+                .addContainerGap(111, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton2))
+                    .addComponent(jR_cuenta_crear)
+                    .addComponent(jR_cuenta_modificar)
+                    .addComponent(jR_cuenta_borrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_cuenta_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_cuenta_Propietario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_cuenta_dinero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_cuenta_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jB_guardar)
+                    .addComponent(jB_cancelar))
                 .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jR_cuenta_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_borrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jR_cuenta_borrarActionPerformed
+
+    private void jR_cuenta_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_modificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jR_cuenta_modificarActionPerformed
+
+    private void jR_cuenta_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_crearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jR_cuenta_crearActionPerformed
+
+    private void jB_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cancelarActionPerformed
+        
+        //Limpiar campos
+        
+        jT_cuenta_numero.setText("");
+        jT_cuenta_Propietario.setText("");
+        jT_cuenta_dinero.setText("");
+        jT_cuenta_fecha.setText("");
+    }//GEN-LAST:event_jB_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,19 +218,20 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.ButtonGroup bg_admin_cuentas;
+    private javax.swing.JButton jB_cancelar;
+    private javax.swing.JButton jB_guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jR_cuenta_borrar;
+    private javax.swing.JRadioButton jR_cuenta_crear;
+    private javax.swing.JRadioButton jR_cuenta_modificar;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jT_cuenta_Propietario;
+    private javax.swing.JTextField jT_cuenta_dinero;
+    private javax.swing.JTextField jT_cuenta_fecha;
+    private javax.swing.JTextField jT_cuenta_numero;
     // End of variables declaration//GEN-END:variables
 }

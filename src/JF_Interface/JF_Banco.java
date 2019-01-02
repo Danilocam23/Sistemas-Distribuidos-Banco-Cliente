@@ -5,6 +5,8 @@
  */
 package JF_Interface;
 
+import sun.security.jgss.spi.MechanismFactory;
+
 /**
  *
  * @author Danilo
@@ -38,6 +40,11 @@ public class JF_Banco extends javax.swing.JFrame {
         jBTransacciones.setText("Transacciones");
 
         jBSaldos.setText("Administrar Cuentas");
+        jBSaldos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSaldosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,6 +72,12 @@ public class JF_Banco extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBSaldosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaldosActionPerformed
+        JF_Administrar_Cuentas jfac = new JF_Administrar_Cuentas();
+        jfac.show();
+        dispose();
+    }//GEN-LAST:event_jBSaldosActionPerformed
 
     /**
      * @param args the command line arguments

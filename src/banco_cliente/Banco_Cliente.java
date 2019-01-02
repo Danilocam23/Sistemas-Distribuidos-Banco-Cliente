@@ -5,6 +5,8 @@
  */
 package banco_cliente;
 
+import JF_Interface.JF_Banco;
+
 /**
  *
  * @author xcojcama
@@ -15,8 +17,13 @@ public class Banco_Cliente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Conectar_Sockets c = new Conectar_Sockets();
-        c.inicio();
+        /**Conectar_Sockets c = new Conectar_Sockets();
+        c.inicio();*/
+        
+        JF_Banco jfb = new JF_Banco();
+        jfb.show();
+  
+                
     }
     
 }

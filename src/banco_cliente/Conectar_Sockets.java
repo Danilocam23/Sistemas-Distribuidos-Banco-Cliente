@@ -26,7 +26,7 @@ public class Conectar_Sockets {
     //variables de salida
     PrintStream salida;
 
-    public void inicio() {
+    public void Datos(String jsDatos) {
         try {
             //se reliza la conecion con el soket            
             cliente = new Socket(ip,puerto);
