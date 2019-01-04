@@ -84,6 +84,11 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
         jLabel3.setText("Dinero ingresado ");
 
+        jT_cuenta_Propietario_nom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jT_cuenta_Propietario_nomActionPerformed(evt);
+            }
+        });
         jT_cuenta_Propietario_nom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jT_cuenta_Propietario_nomKeyTyped(evt);
@@ -203,18 +208,27 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     private void jR_cuenta_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_borrarActionPerformed
         jT_cuenta_numero.setText("");
         jT_cuenta_Propietario_nom.setText("");
+        jT_cuenta_Propietario_ape.setText("");
         jT_cuenta_dinero.setText("");
+        
+        jT_cuenta_Propietario_nom.setEditable(false);
+        jT_cuenta_Propietario_ape.setEditable(false);
+        jT_cuenta_dinero.setEditable(false);
     }//GEN-LAST:event_jR_cuenta_borrarActionPerformed
 
     private void jR_cuenta_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_modificarActionPerformed
         jT_cuenta_numero.setText("");
         jT_cuenta_Propietario_nom.setText("");
+        jT_cuenta_Propietario_ape.setText("");
         jT_cuenta_dinero.setText("");
+        
+        jT_cuenta_dinero.setEditable(false);
     }//GEN-LAST:event_jR_cuenta_modificarActionPerformed
 
     private void jR_cuenta_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_cuenta_crearActionPerformed
         jT_cuenta_numero.setText("");
         jT_cuenta_Propietario_nom.setText("");
+        jT_cuenta_Propietario_ape.setText("");
         jT_cuenta_dinero.setText("");
     }//GEN-LAST:event_jR_cuenta_crearActionPerformed
 
@@ -223,6 +237,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
         //Limpiar campos
         jT_cuenta_numero.setText("");
         jT_cuenta_Propietario_nom.setText("");
+        jT_cuenta_Propietario_ape.setText("");
         jT_cuenta_dinero.setText("");
 
         JF_Banco jfb = new JF_Banco();
@@ -286,6 +301,10 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
             getToolkit().beep();
         }
     }//GEN-LAST:event_jT_cuenta_Propietario_nomKeyTyped
+
+    private void jT_cuenta_Propietario_nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_cuenta_Propietario_nomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jT_cuenta_Propietario_nomActionPerformed
 
     /**
      * @param args the command line arguments
