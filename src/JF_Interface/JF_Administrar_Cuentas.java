@@ -6,6 +6,7 @@
 package JF_Interface;
 
 import banco_cliente.Conectar_Sockets;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.AbstractButton;
@@ -82,6 +83,24 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
         jLabel2.setText("Propietario de la cuenta");
 
         jLabel3.setText("Dinero ingresado ");
+
+        jT_cuenta_Propietario_nom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jT_cuenta_Propietario_nomKeyTyped(evt);
+            }
+        });
+
+        jT_cuenta_Propietario_ape.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jT_cuenta_Propietario_apeKeyTyped(evt);
+            }
+        });
+
+        jT_cuenta_dinero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jT_cuenta_dineroKeyTyped(evt);
+            }
+        });
 
         jB_guardar.setText("Guardar");
         jB_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +224,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
         jT_cuenta_numero.setText("");
         jT_cuenta_Propietario_nom.setText("");
         jT_cuenta_dinero.setText("");
-        
+
         JF_Banco jfb = new JF_Banco();
         jfb.show();
         dispose();
@@ -227,7 +246,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
         String value
                 = "1,"
-                + Operacion  + ","
+                + Operacion + ","
                 + jT_cuenta_numero.getText() + ","
                 + jT_cuenta_Propietario_nom.getText() + ","
                 + jT_cuenta_Propietario_ape.getText() + ","
@@ -237,6 +256,36 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
         cs.Datos(value);
     }//GEN-LAST:event_jB_guardarActionPerformed
+
+    private void jT_cuenta_dineroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_cuenta_dineroKeyTyped
+        char car = evt.getKeyChar();
+        if (Character.isDigit(car)) {
+
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }//GEN-LAST:event_jT_cuenta_dineroKeyTyped
+
+    private void jT_cuenta_Propietario_apeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_cuenta_Propietario_apeKeyTyped
+        char car = evt.getKeyChar();
+        if (Character.isLetter(car)|| car == KeyEvent.VK_SPACE ) {
+
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }//GEN-LAST:event_jT_cuenta_Propietario_apeKeyTyped
+
+    private void jT_cuenta_Propietario_nomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_cuenta_Propietario_nomKeyTyped
+        char car = evt.getKeyChar();
+        if (Character.isLetter(car)|| car == KeyEvent.VK_SPACE ) {
+
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }//GEN-LAST:event_jT_cuenta_Propietario_nomKeyTyped
 
     /**
      * @param args the command line arguments
