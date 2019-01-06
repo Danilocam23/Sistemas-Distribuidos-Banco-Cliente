@@ -173,6 +173,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jT_cuenta_numero">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jT_cuenta_numeroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jT_cuenta_Propietario_nom">
       <Events>

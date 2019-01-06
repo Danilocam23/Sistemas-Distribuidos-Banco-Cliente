@@ -51,11 +51,23 @@ public class JF_Transacciones extends javax.swing.JFrame {
             }
         });
 
+        bG_transacciones.add(jR_tran_retiro);
         jR_tran_retiro.setText("Retiro");
+        jR_tran_retiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jR_tran_retiroActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Número de la cuenta");
 
         jLabel2.setText("Cantidad del dinero");
+
+        jT_tran_dinero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jT_tran_dineroKeyTyped(evt);
+            }
+        });
 
         jB_guardar.setText("Guardar");
         jB_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,39 +139,55 @@ public class JF_Transacciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jR_consignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_consignacionActionPerformed
-        // TODO add your handling code here:
+        jT_tran_numero.setText("");
+        jT_tran_dinero.setText("");
     }//GEN-LAST:event_jR_consignacionActionPerformed
 
     private void jB_tran_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_tran_cancelarActionPerformed
-        
+
         jT_tran_numero.setText("");
         jT_tran_dinero.setText("");
-         JF_Banco jfb = new JF_Banco();
+        JF_Banco jfb = new JF_Banco();
         jfb.show();
         dispose();
     }//GEN-LAST:event_jB_tran_cancelarActionPerformed
 
     private void jB_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_guardarActionPerformed
-       
+
         String Operacion;
 
         if (jR_consignacion.isSelected()) {
-            Operacion = "consignacion";       
+            Operacion = "consignacion";
         } else {
             Operacion = "retiro";
 
         }
-        
+
         String value
-                ="2,"
-               + Operacion  + ","
-                +jT_tran_numero.getText() + ","
+                = "2,"
+                + Operacion + ","
+                + jT_tran_numero.getText() + ","
                 + jT_tran_dinero.getText();
 
         Conectar_Sockets cs = new Conectar_Sockets();
 
         cs.Datos(value);
     }//GEN-LAST:event_jB_guardarActionPerformed
+
+    private void jT_tran_dineroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_tran_dineroKeyTyped
+        char car = evt.getKeyChar();
+        if (Character.isDigit(car)) {
+
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }//GEN-LAST:event_jT_tran_dineroKeyTyped
+
+    private void jR_tran_retiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jR_tran_retiroActionPerformed
+        jT_tran_numero.setText("");
+        jT_tran_dinero.setText("");
+    }//GEN-LAST:event_jR_tran_retiroActionPerformed
 
     /**
      * @param args the command line arguments

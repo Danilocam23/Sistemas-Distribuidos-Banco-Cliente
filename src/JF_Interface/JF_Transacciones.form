@@ -109,8 +109,14 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jR_tran_retiro">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bG_transacciones"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Retiro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jR_tran_retiroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -125,6 +131,9 @@
     <Component class="javax.swing.JTextField" name="jT_tran_numero">
     </Component>
     <Component class="javax.swing.JTextField" name="jT_tran_dinero">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jT_tran_dineroKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jB_guardar">
       <Properties>

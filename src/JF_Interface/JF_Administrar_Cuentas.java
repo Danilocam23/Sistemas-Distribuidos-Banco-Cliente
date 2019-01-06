@@ -84,6 +84,12 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
         jLabel3.setText("Dinero ingresado ");
 
+        jT_cuenta_numero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jT_cuenta_numeroActionPerformed(evt);
+            }
+        });
+
         jT_cuenta_Propietario_nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jT_cuenta_Propietario_nomActionPerformed(evt);
@@ -305,6 +311,10 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     private void jT_cuenta_Propietario_nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_cuenta_Propietario_nomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jT_cuenta_Propietario_nomActionPerformed
+
+    private void jT_cuenta_numeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_cuenta_numeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jT_cuenta_numeroActionPerformed
 
     /**
      * @param args the command line arguments
