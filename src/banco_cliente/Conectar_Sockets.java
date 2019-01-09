@@ -9,6 +9,7 @@ package banco_cliente;
 
 import java.net.*;
 import java.io.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +38,7 @@ public class Conectar_Sockets {
             salida = new PrintStream(cliente.getOutputStream());
             salida.println(envio);
             String msg = entrada.readLine();
-            System.out.println(msg);
+              JOptionPane.showMessageDialog(null, msg);
             entrada.close();
             salida.close();
             cliente.close();
