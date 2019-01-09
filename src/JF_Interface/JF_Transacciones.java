@@ -6,6 +6,7 @@
 package JF_Interface;
 
 import banco_cliente.Conectar_Sockets;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -154,24 +155,29 @@ public class JF_Transacciones extends javax.swing.JFrame {
 
     private void jB_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_guardarActionPerformed
 
-        String Operacion;
-
-        if (jR_consignacion.isSelected()) {
-            Operacion = "consignacion";
+        if (jT_tran_numero.getText().isEmpty()
+                || jT_tran_dinero.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Uno de los campos esta vacio", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            Operacion = "retiro";
+            String Operacion;
 
+            if (jR_consignacion.isSelected()) {
+                Operacion = "consignacion";
+            } else {
+                Operacion = "retiro";
+
+            }
+
+            String value
+                    = "2,"
+                    + Operacion + ","
+                    + jT_tran_numero.getText() + ","
+                    + jT_tran_dinero.getText();
+
+            Conectar_Sockets cs = new Conectar_Sockets();
+
+            cs.Datos(value);
         }
-
-        String value
-                = "2,"
-                + Operacion + ","
-                + jT_tran_numero.getText() + ","
-                + jT_tran_dinero.getText();
-
-        Conectar_Sockets cs = new Conectar_Sockets();
-
-        cs.Datos(value);
     }//GEN-LAST:event_jB_guardarActionPerformed
 
     private void jT_tran_dineroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_tran_dineroKeyTyped

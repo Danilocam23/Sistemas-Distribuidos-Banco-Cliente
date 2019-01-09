@@ -6,6 +6,7 @@
 package JF_Interface;
 
 import banco_cliente.Conectar_Sockets;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -106,20 +107,27 @@ public class JF_Saldos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jB_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_buscarActionPerformed
-        String value
-                = "3,"
-                + "Saldo,"
-                + jT_saldo_numero.getText();
 
-        Conectar_Sockets cs = new Conectar_Sockets();
+        if (jT_saldo_numero.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Uno de los campos esta vacio", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String value
+                    = "3,"
+                    + "Saldo,"
+                    + jT_saldo_numero.getText();
 
-        cs.Datos(value);
+            Conectar_Sockets cs = new Conectar_Sockets();
+
+            cs.Datos(value);
+        }
+
+
     }//GEN-LAST:event_jB_buscarActionPerformed
 
     private void jB_saldo_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_saldo_cancelarActionPerformed
         jT_saldo_numero.setText("");
         jT_saldo_total.setText("");
-        
+
         JF_Banco jfb = new JF_Banco();
         jfb.show();
         dispose();
