@@ -255,10 +255,12 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
     private void jB_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_guardarActionPerformed
 
-        if(jT_cuenta_numero.getText().isEmpty() ||
+        
+        
+        if(!jR_cuenta_borrar.isSelected() && (jT_cuenta_numero.getText().isEmpty() ||
         jT_cuenta_Propietario_nom.getText().isEmpty() ||
         jT_cuenta_Propietario_ape.getText().isEmpty() ||
-        jT_cuenta_dinero.getText().isEmpty()){
+        jT_cuenta_dinero.getText().isEmpty())){
         
             JOptionPane.showMessageDialog(null,"Uno de los campos esta vacio", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
