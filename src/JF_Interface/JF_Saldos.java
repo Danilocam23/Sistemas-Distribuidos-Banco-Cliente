@@ -35,6 +35,7 @@ public class JF_Saldos extends javax.swing.JFrame {
         jT_saldo_numero = new javax.swing.JTextField();
         jB_buscar = new javax.swing.JButton();
         jB_saldo_cancelar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -57,6 +58,8 @@ public class JF_Saldos extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Banco.jpg"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,18 +70,24 @@ public class JF_Saldos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(54, 54, 54)
-                        .addComponent(jT_saldo_numero, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
+                        .addComponent(jT_saldo_numero, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jB_buscar)
                         .addGap(18, 18, 18)
                         .addComponent(jB_saldo_cancelar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(154, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jT_saldo_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -86,7 +95,7 @@ public class JF_Saldos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_buscar)
                     .addComponent(jB_saldo_cancelar))
-                .addGap(85, 85, 85))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,6 +168,7 @@ public class JF_Saldos extends javax.swing.JFrame {
     private javax.swing.JButton jB_saldo_cancelar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jT_saldo_numero;
     // End of variables declaration//GEN-END:variables
 }

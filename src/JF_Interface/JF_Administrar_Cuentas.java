@@ -51,6 +51,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
         jB_cancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,52 +133,61 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
 
         jLabel5.setText("Apellido Propietario");
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Banco.jpg"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jR_cuenta_crear)
-                        .addGap(18, 18, 18)
-                        .addComponent(jR_cuenta_borrar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jR_cuenta_modificar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(50, 50, 50)
-                                .addComponent(jT_cuenta_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(75, 75, 75)
-                                    .addComponent(jB_guardar)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jB_cancelar)
-                                    .addGap(78, 78, 78))
-                                .addComponent(jLabel3))))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(93, 93, 93)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jR_cuenta_crear)
+                                .addGap(18, 18, 18)
+                                .addComponent(jR_cuenta_borrar)
+                                .addGap(18, 18, 18)
+                                .addComponent(jR_cuenta_modificar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(50, 50, 50)
+                                        .addComponent(jT_cuenta_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGap(75, 75, 75)
+                                            .addComponent(jB_guardar)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jB_cancelar)
+                                            .addGap(78, 78, 78))
+                                        .addComponent(jLabel3))))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(164, 164, 164)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jT_cuenta_Propietario_nom)
+                                    .addComponent(jT_cuenta_Propietario_ape, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                    .addComponent(jT_cuenta_dinero)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jT_cuenta_Propietario_nom)
-                            .addComponent(jT_cuenta_Propietario_ape, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                            .addComponent(jT_cuenta_dinero))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel6)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jR_cuenta_crear)
                     .addComponent(jR_cuenta_modificar)
@@ -371,6 +381,7 @@ public class JF_Administrar_Cuentas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JRadioButton jR_cuenta_borrar;
     private javax.swing.JRadioButton jR_cuenta_crear;
     private javax.swing.JRadioButton jR_cuenta_modificar;

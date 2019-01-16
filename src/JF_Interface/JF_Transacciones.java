@@ -39,6 +39,7 @@ public class JF_Transacciones extends javax.swing.JFrame {
         jT_tran_dinero = new javax.swing.JTextField();
         jB_guardar = new javax.swing.JButton();
         jB_tran_cancelar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(358, 359));
@@ -84,6 +85,8 @@ public class JF_Transacciones extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Banco.jpg"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,11 +116,17 @@ public class JF_Transacciones extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jB_tran_cancelar)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jR_consignacion)
                     .addComponent(jR_tran_retiro))
@@ -236,6 +245,7 @@ public class JF_Transacciones extends javax.swing.JFrame {
     private javax.swing.JButton jB_tran_cancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JRadioButton jR_consignacion;
     private javax.swing.JRadioButton jR_tran_retiro;
     private javax.swing.JTextField jT_tran_dinero;
