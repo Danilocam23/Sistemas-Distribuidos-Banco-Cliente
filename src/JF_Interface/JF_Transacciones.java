@@ -40,6 +40,7 @@ public class JF_Transacciones extends javax.swing.JFrame {
         jB_guardar = new javax.swing.JButton();
         jB_tran_cancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        JrSoap = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(358, 359));
@@ -87,6 +88,8 @@ public class JF_Transacciones extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Banco.jpg"))); // NOI18N
 
+        JrSoap.setText("WebServices");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,7 +107,7 @@ public class JF_Transacciones extends javax.swing.JFrame {
                                 .addGap(39, 39, 39)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jT_tran_numero)
-                                    .addComponent(jT_tran_dinero, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)))
+                                    .addComponent(jT_tran_dinero)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jR_consignacion)
                                 .addGap(18, 18, 18)
@@ -119,13 +122,17 @@ public class JF_Transacciones extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JrSoap)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(JrSoap))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jR_consignacion)
@@ -168,24 +175,37 @@ public class JF_Transacciones extends javax.swing.JFrame {
                 || jT_tran_dinero.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Uno de los campos esta vacio", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            String Operacion;
 
-            if (jR_consignacion.isSelected()) {
-                Operacion = "consignacion";
+            if (JrSoap.isSelected()) {
+
+                if (jR_consignacion.isSelected()) {
+                    JOptionPane.showMessageDialog(null, transacionSoap(jT_tran_numero.getText(), Integer.parseInt(jT_tran_dinero.getText())));
+                } else {
+                   
+
+                }
+
             } else {
-                Operacion = "retiro";
 
+                String Operacion;
+
+                if (jR_consignacion.isSelected()) {
+                    Operacion = "consignacion";
+                } else {
+                    Operacion = "retiro";
+
+                }
+
+                String value
+                        = "2,"
+                        + Operacion + ","
+                        + jT_tran_numero.getText() + ","
+                        + jT_tran_dinero.getText();
+
+                Conectar_Sockets cs = new Conectar_Sockets();
+
+                cs.Datos(value);
             }
-
-            String value
-                    = "2,"
-                    + Operacion + ","
-                    + jT_tran_numero.getText() + ","
-                    + jT_tran_dinero.getText();
-
-            Conectar_Sockets cs = new Conectar_Sockets();
-
-            cs.Datos(value);
         }
     }//GEN-LAST:event_jB_guardarActionPerformed
 
@@ -240,6 +260,7 @@ public class JF_Transacciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton JrSoap;
     private javax.swing.ButtonGroup bG_transacciones;
     private javax.swing.JButton jB_guardar;
     private javax.swing.JButton jB_tran_cancelar;
@@ -251,4 +272,10 @@ public class JF_Transacciones extends javax.swing.JFrame {
     private javax.swing.JTextField jT_tran_dinero;
     private javax.swing.JTextField jT_tran_numero;
     // End of variables declaration//GEN-END:variables
+
+    private static String transacionSoap(java.lang.String cuenta, int dinero) {
+        WebServicesCliente.BancoService_Service service = new WebServicesCliente.BancoService_Service();
+        WebServicesCliente.BancoService port = service.getBancoServicePort();
+        return port.transacionSoap(cuenta, dinero);
+    }
 }
