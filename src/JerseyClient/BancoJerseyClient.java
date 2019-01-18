@@ -39,7 +39,6 @@ public class BancoJerseyClient {
         resource = resource.path(java.text.MessageFormat.format("{0}/{1}", new Object[]{cuenta, dinero}));        
         Invocation.Builder ib = resource.request(MediaType.APPLICATION_JSON);
         Response r = ib.get();
-       
         return r.readEntity(String.class);
     }
 
