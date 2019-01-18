@@ -6,7 +6,14 @@
 package JF_Interface;
 
 import banco_cliente.Conectar_Sockets;
+
 import javax.swing.JOptionPane;
+import javax.ws.rs.client.Client;
+
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.xml.ws.Response;
 
 /**
  *
@@ -124,7 +131,7 @@ public class JF_Transacciones extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JrSoap)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,8 +188,8 @@ public class JF_Transacciones extends javax.swing.JFrame {
                 if (jR_consignacion.isSelected()) {
                     JOptionPane.showMessageDialog(null, transacionSoap(jT_tran_numero.getText(), Integer.parseInt(jT_tran_dinero.getText())));
                 } else {
-                   
 
+                   
                 }
 
             } else {
