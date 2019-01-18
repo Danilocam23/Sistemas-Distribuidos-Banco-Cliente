@@ -5,6 +5,7 @@
  */
 package JF_Interface;
 
+import JerseyClient.BancoJerseyClient;
 import banco_cliente.Conectar_Sockets;
 
 import javax.swing.JOptionPane;
@@ -189,7 +190,9 @@ public class JF_Transacciones extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, transacionSoap(jT_tran_numero.getText(), Integer.parseInt(jT_tran_dinero.getText())));
                 } else {
 
-                   
+                  BancoJerseyClient bj = new BancoJerseyClient();
+                   JOptionPane.showMessageDialog(null,bj.Debito(jT_tran_numero.getText(), jT_tran_dinero.getText()));
+                  
                 }
 
             } else {
